@@ -21,7 +21,7 @@ $(document).ready(function () {
                     console.log(film.title);
                     console.log(film.original_title);
                     console.log(film.original_language);
-                    console.log(film.vote_count);
+                    console.log(film.vote_average);
                 }
             },
             error: function (err) {
