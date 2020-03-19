@@ -4,18 +4,29 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #6D7B8D;
+}
+
 header {
-    padding: 10px;
-    background-color: #808080;
+    padding: 10px 30px;
+    background-color: #000000;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Acme', sans-serif;
+    color: #C11B17;
 }
 
 .ricerca input {
     width: 200px;
     height: 30px;
     padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
 .ricerca button {
@@ -24,7 +35,7 @@ header {
     font-weight: bold;
     border-radius: 5px;
     font-family: sans-serif;
-    background-color: #5fa05f;
+    background-color: #C11B17;
     border: none;
 }
 
@@ -35,6 +46,7 @@ header {
 }
 
 .container {
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -42,10 +54,39 @@ header {
 }
 
 .card {
-    width: 400px;
-    height: 300px;
-    background-color: #5fa05f;
+    min-width: 355px;
+    max-width: 382px;
+    min-height: 580px;
+    background-color: #C11B17;
+    font-family: 'Roboto', sans-serif;
+    color: black;
     margin: 20px;
     padding: 20px;
     border-radius: 5px;
+}
+
+.card img.copertina {
+    width: 342px;
+    margin-bottom: 5px;
+}
+
+.card:hover img.copertina {
+    display: none;
+}
+
+.card:hover h3 {
+    display: block;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card h3 {
+    display: none;
+}
+
+
+.card i {
+    color: #D4A017;
 }

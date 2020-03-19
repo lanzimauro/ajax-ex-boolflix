@@ -25,12 +25,15 @@ $(document).ready(function () {
 
                     var linguaOriginale = linguaFilmOriginale(film);
                     var stelleVoto = votoEffettivo(film);
+                    var poster = copertina(film);
 
                     var filmTemplate = {
+                    copertina: poster,
                     title: film.title,
                     original_title: film.original_title,
                     original_language: linguaOriginale,
-                    vote_average: stelleVoto
+                    vote_average: stelleVoto,
+                    overview: film.overview
                 }
                 var cardFilm = cardTemplate(filmTemplate);
                 $('.container').append(cardFilm);
@@ -51,18 +54,21 @@ $(document).ready(function () {
             method: 'GET',
             success: function (data) {
                 var films = data.results;
-        
+
                 for (var i = 0; i < films.length; i++) {
                     var film = films[i];
 
                     var linguaOriginale = linguaFilmOriginale(film);
                     var stelleVoto = votoEffettivo(film);
+                    var poster = copertina(film);
 
                     var filmTemplate = {
+                    copertina: poster,
                     title: film.name,
                     original_title: film.original_name,
                     original_language: linguaOriginale,
-                    vote_average: stelleVoto
+                    vote_average: stelleVoto,
+                    overview: film.overview
                 }
                 var cardFilm = cardTemplate(filmTemplate);
                 $('.container').append(cardFilm);
@@ -112,6 +118,17 @@ $(document).ready(function () {
             }
         }
         return votoStelle;
+    }
+
+
+// COPERTINA
+    function copertina(film) {
+        if (film.poster_path == null) {
+            var poster = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpucksandpuzzlepieces.files.wordpress.com%2F2012%2F12%2Ffilenotfound404.jpg&f=1&nofb=1';
+        } else {
+        var poster = 'https://image.tmdb.org/t/p/w342' + film.poster_path;
+        }
+        return poster;
     }
 
 

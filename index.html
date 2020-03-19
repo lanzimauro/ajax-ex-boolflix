@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Boolflix</title>
+        <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/4a9384177e.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,8 +12,11 @@
     </head>
     <body>
         <header>
+            <div class="logo">
+                <h1>BOOLFLIX</h1>
+            </div>
             <div class="ricerca">
-                <input class="cerca" type="text" placeholder="film...">
+                <input class="cerca" type="text" placeholder="cosa vuoi guardare?">
                 <button id='button' type="button" name="button">CERCA</button>
             </div>
         </header>
@@ -28,10 +33,12 @@
 
         <script id="card-template" type="text/x-handlebars-template">
             <div class="card">
+                <img  class="copertina" src="{{copertina}}" alt="">
                 <h2>Titolo: {{title}}</h2>
                 <h3>Titolo originale: {{original_title}}</h3>
                 <h3>Lingua: {{{original_language}}}</h3>
                 <h3>Voto: {{{vote_average}}}</h3>
+                <h3>Overview: {{overview}}</h3>
             </div>
         </script>
 
