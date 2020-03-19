@@ -41,6 +41,38 @@ $(document).ready(function () {
             }
 
         });
+        $.ajax({
+            url: apiBaseUrl + '/search/tv',
+            data: {
+                api_key: 'fce468cbc623dcd332be8cef7e5f0af2',
+                query: valoreCercato,
+                language: 'it-IT'
+            },
+            method: 'GET',
+            success: function (data) {
+                var films = data.results;
+        
+                for (var i = 0; i < films.length; i++) {
+                    var film = films[i];
+
+                    var linguaOriginale = linguaFilmOriginale(film);
+                    var stelleVoto = votoEffettivo(film);
+
+                    var filmTemplate = {
+                    title: film.name,
+                    original_title: film.original_name,
+                    original_language: linguaOriginale,
+                    vote_average: stelleVoto
+                }
+                var cardFilm = cardTemplate(filmTemplate);
+                $('.container').append(cardFilm);
+                }
+            },
+            error: function (err) {
+                console.log('ERRORE');
+            }
+
+        });
     });
 
 
