@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Boolflix</title>
+        <script src="https://kit.fontawesome.com/4a9384177e.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
@@ -29,11 +30,10 @@
             <div class="card">
                 <h2>Titolo: {{title}}</h2>
                 <h3>Titolo originale: {{original_title}}</h3>
-                <h3>Lingua: {{original_language}}</h3>
-                <h3>Voto: {{vote_average}}</h3>
+                <h3>Lingua: {{{original_language}}}</h3>
+                <h3>Voto: {{{vote_average}}}</h3>
             </div>
         </script>
-
 
         <script src="js/main.js" charset="utf-8"></script>
     </body>
